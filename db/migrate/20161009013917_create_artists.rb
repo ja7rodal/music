@@ -4,7 +4,7 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :image_url
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

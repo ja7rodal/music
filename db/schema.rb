@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009023551) do
+ActiveRecord::Schema.define(version: 20161009014044) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
     t.string   "image_url"
-    t.date     "released_at"
+    t.datetime "released_at"
+    t.integer  "artist_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "artist_id"
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -30,11 +31,12 @@ ActiveRecord::Schema.define(version: 20161009023551) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "number"
+    t.integer  "number"
     t.string   "preview_url"
+    t.integer  "album_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "album_id"
+    t.index ["album_id"], name: "index_songs_on_album_id"
   end
 
 end
