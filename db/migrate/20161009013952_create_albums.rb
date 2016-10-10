@@ -9,5 +9,4 @@ class CreateAlbums < ActiveRecord::Migration[5.0]
     end
   end
 
-
 end
