@@ -1,11 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="clearfix col-xs-6 col-sm-4 col-md-3">
+    <div class="clearfix col-xs-8 col-sm-8 col-md-8">
       <h1><%= @artist.name %></h1>
-      <img src="<%= @artist.image_url %>" class="img-thumbnail"/>
-      <button type="button"  name="button" class="btn btn-primary">Detalles</button>
+      <p>Albums (<%= @albums.count %>) </p>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <% @albums.each do |album| %>
+          <div class="clearfix col-xs-6 col-sm4 col-md-3">
+
+            <div class="panel panel-default artist">
+            <img src="<%= album.image_url %>" alt="" class="img-responsive img-rounded" />
+            <h3><%= album.name %></h3>
+            <p><%= album.released_at.to_s[0..9] %></p>
+            </div>
+
+            </div>
+          <% end %>
+
+      </div>
+
     </div>
-    <div class="clearfix visible-xs"></div>
-    
+
+    <div class="clearfix col-xs-4 col-sm-4 col-md-4">
+      <img src="<%= @artist.image_url %>" alt="" class="img-responsive img-rounded" />
+
+    </div>
   </div>
-</div>
