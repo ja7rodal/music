@@ -1,15 +1,14 @@
-<h1>Artistas?</h1>
-<div class="">
-  <% @artists.each do |artist| %>
-  <div>
-
-    <img src="<%= artist.image_url %>" alt="" />
+<div class="container">
+  <div class="row">
+    <% @artists.each do |artist| %>
+    <div class="clearfix cols-xs-6 col-sm-4 col-md-3">
+      <div class="panel panel-default artist">
+      <img src="<%= artist.image_url %>" alt="" class="img-responsive img-rounded" />
+      <h2><%= artist.name %></h2>
+      <%= link_to "Ver mas", artist, class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+    <div class="clearfix visible-xs "></div>
+    <% end %>
   </div>
-  <div class="">
-      <%= artist.name %>
-  </div>
-  <% end %>
-  <p>
-
-  </p>
 </div>

@@ -1,2 +1,16 @@
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h2{
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.artist{
+  padding: 3px 3px 6px 3px;
+}
